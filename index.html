@@ -31,23 +31,56 @@
         <section class="section photos-section">
             <div class="container">
                 <h2 class="section-title" data-i18n="photos_title">Photos du Gouvernement</h2>
-                <div class="photos-grid">
-                    <div class="photo-card">
-                        <img src="/placeholder.svg?height=250&width=350" alt="Government building">
-                        <p data-i18n="photo_1">Siège du gouvernement de Ghaiba</p>
+                <div class="slider" 
+                     role="region" 
+                     aria-roledescription="carousel" 
+                     aria-label="Photos du Gouvernement"
+                     data-autoplay="true" 
+                     data-interval="5000">
+                    <div class="slider-container">
+                        <div class="slider-track" aria-live="off">
+                            <figure class="slide" role="group" aria-roledescription="slide" aria-label="1 / 4">
+                                <img src="/placeholder.svg?height=400&width=800" alt="Government building" loading="lazy">
+                                <figcaption data-i18n="photo_1">Siège du gouvernement de Ghaiba</figcaption>
+                            </figure>
+                            <figure class="slide" role="group" aria-roledescription="slide" aria-label="2 / 4">
+                                <img src="/placeholder.svg?height=400&width=800" alt="Officials" loading="lazy">
+                                <figcaption data-i18n="photo_2">Réunion des officials gouvernementaux</figcaption>
+                            </figure>
+                            <figure class="slide" role="group" aria-roledescription="slide" aria-label="3 / 4">
+                                <img src="/placeholder.svg?height=400&width=800" alt="City" loading="lazy">
+                                <figcaption data-i18n="photo_3">Vue panoramique de Ghaiba</figcaption>
+                            </figure>
+                            <figure class="slide" role="group" aria-roledescription="slide" aria-label="4 / 4">
+                                <img src="/placeholder.svg?height=400&width=800" alt="Olives" loading="lazy">
+                                <figcaption data-i18n="photo_4">Les oliviers de Ghaiba</figcaption>
+                            </figure>
+                        </div>
                     </div>
-                    <div class="photo-card">
-                        <img src="/placeholder.svg?height=250&width=350" alt="Officials">
-                        <p data-i18n="photo_2">Réunion des officials gouvernementaux</p>
+                    <button class="slider-btn slider-btn-prev" aria-label="Photo précédente" data-i18n-aria="slider_prev">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                        </svg>
+                    </button>
+                    <button class="slider-btn slider-btn-next" aria-label="Photo suivante" data-i18n-aria="slider_next">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                        </svg>
+                    </button>
+                    <div class="slider-dots" role="tablist" aria-label="Sélection de diapositive">
+                        <button class="slider-dot active" role="tab" aria-selected="true" aria-label="Aller à la diapositive 1" data-slide="0"></button>
+                        <button class="slider-dot" role="tab" aria-selected="false" aria-label="Aller à la diapositive 2" data-slide="1"></button>
+                        <button class="slider-dot" role="tab" aria-selected="false" aria-label="Aller à la diapositive 3" data-slide="2"></button>
+                        <button class="slider-dot" role="tab" aria-selected="false" aria-label="Aller à la diapositive 4" data-slide="3"></button>
                     </div>
-                    <div class="photo-card">
-                        <img src="/placeholder.svg?height=250&width=350" alt="City">
-                        <p data-i18n="photo_3">Vue panoramique de Ghaiba</p>
-                    </div>
-                    <div class="photo-card">
-                        <img src="/placeholder.svg?height=250&width=350" alt="Olives">
-                        <p data-i18n="photo_4">Les oliviers de Ghaiba</p>
-                    </div>
+                    <button class="slider-autoplay-btn" aria-label="Mettre en pause le diaporama" data-i18n-aria="slider_pause">
+                        <svg class="pause-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="currentColor" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                        </svg>
+                        <svg class="play-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" style="display:none;">
+                            <path fill="currentColor" d="M8 5v14l11-7z"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </section>
