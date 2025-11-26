@@ -97,10 +97,8 @@ let slider = null
 // Initialize
 document.addEventListener("DOMContentLoaded", () => {
   initLanguage()
-  try {
+  if (typeof Chart !== "undefined") {
     initCharts()
-  } catch (e) {
-    console.warn("Chart.js not available:", e.message)
   }
   populatePriceTable()
   setupLanguageButtons()
@@ -152,13 +150,9 @@ function updateLanguage(lang) {
   updateSliderAriaLabels(lang)
 
   // Redraw chart with new language
-  if (chart) {
-    try {
-      chart.destroy()
-      initCharts()
-    } catch (e) {
-      console.warn("Chart.js not available:", e.message)
-    }
+  if (chart && typeof Chart !== "undefined") {
+    chart.destroy()
+    initCharts()
   }
 }
 
