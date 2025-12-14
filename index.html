@@ -1,156 +1,27 @@
-<!DOCTYPE html>
-<html lang="fr" dir="ltr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghaiba News - أخبار غيبة</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div id="app">
-        <!-- Header Navigation -->
-        <header class="header">
-            <div class="header-container">
-                <h1 class="logo">Ghaiba News</h1>
-                <nav class="nav">
-                    <button class="lang-btn active" data-lang="fr">FR</button>
-                    <button class="lang-btn" data-lang="ar">AR</button>
-                </nav>
-            </div>
-        </header>
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OliveNews - Prix et Actualités de l'Huile d'Olive</title>
+    <meta name="description" content="Suivez le prix de l'huile d'olive en temps réel, consultez l'historique des prix et restez informé des dernières actualités du secteur oléicole." />
+    <meta name="author" content="OliveNews" />
+    <meta name="keywords" content="huile d'olive, prix olive, marché olive, actualités olive, production olive" />
 
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h2 data-i18n="hero_title">Bienvenue à Ghaiba News</h2>
-                <p data-i18n="hero_subtitle">Votre source d'information sur le gouvernement et les prix de l'olivier</p>
-            </div>
-        </section>
+    <meta property="og:title" content="OliveNews - Prix et Actualités de l'Huile d'Olive" />
+    <meta property="og:description" content="Suivez le prix de l'huile d'olive en temps réel et restez informé des dernières actualités du secteur." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
-        <!-- Government Photos Section -->
-        <section class="section photos-section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="photos_title">Photos du Gouvernement</h2>
-                <div class="photos-grid">
-                    <div class="photo-card">
-                        <img src="/placeholder.svg?height=250&width=350" alt="Government building">
-                        <p data-i18n="photo_1">Siège du gouvernement de Ghaiba</p>
-                    </div>
-                    <div class="photo-card">
-                        <img src="/placeholder.svg?height=250&width=350" alt="Officials">
-                        <p data-i18n="photo_2">Réunion des officials gouvernementaux</p>
-                    </div>
-                    <div class="photo-card">
-                        <img src="/placeholder.svg?height=250&width=350" alt="City">
-                        <p data-i18n="photo_3">Vue panoramique de Ghaiba</p>
-                    </div>
-                    <div class="photo-card">
-                        <img src="/placeholder.svg?height=250&width=350" alt="Olives">
-                        <p data-i18n="photo_4">Les oliviers de Ghaiba</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@OliveNews" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
-        <!-- Olive Price Tracker -->
-        <section class="section price-section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="price_title">Suivi des Prix de l'Olivier</h2>
-                
-                <div class="price-stats">
-                    <div class="stat-card">
-                        <span class="stat-label" data-i18n="current_price">Prix Actuel</span>
-                        <span class="stat-value" id="currentPrice">45.50 DZD</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-label" data-i18n="daily_change">Variation</span>
-                        <span class="stat-value" id="dailyChange">+2.3%</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-label" data-i18n="weekly_high">Prix Max</span>
-                        <span class="stat-value">48.00 DZD</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-label" data-i18n="weekly_low">Prix Min</span>
-                        <span class="stat-value">42.50 DZD</span>
-                    </div>
-                </div>
+    <link rel="canonical" href="https://olivenews.com" />
+  </head>
 
-                <div class="chart-container">
-                    <canvas id="priceChart"></canvas>
-                </div>
-
-                <table class="price-table">
-                    <thead>
-                        <tr>
-                            <th data-i18n="date">Date</th>
-                            <th data-i18n="price">Prix (DZD/kg)</th>
-                            <th data-i18n="change">Variation</th>
-                        </tr>
-                    </thead>
-                    <tbody id="priceTableBody">
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- News Section -->
-        <section class="section news-section">
-            <div class="container">
-                <h2 class="section-title" data-i18n="news_title">Actualités</h2>
-                <div class="news-grid">
-                    <article class="news-card">
-                        <img src="/placeholder.svg?height=200&width=350" alt="News">
-                        <div class="news-content">
-                            <span class="news-category" data-i18n="news_cat_1">Politique</span>
-                            <h3 data-i18n="news_1_title">Nouvelle Initiative de Développement</h3>
-                            <p data-i18n="news_1_desc">Le gouvernement de Ghaiba lance une nouvelle initiative pour stimuler le développement économique local...</p>
-                            <span class="news-date">25 Novembre 2025</span>
-                        </div>
-                    </article>
-
-                    <article class="news-card">
-                        <img src="/placeholder.svg?height=200&width=350" alt="Agriculture">
-                        <div class="news-content">
-                            <span class="news-category" data-i18n="news_cat_2">Agriculture</span>
-                            <h3 data-i18n="news_2_title">Récolte Record d'Olives</h3>
-                            <p data-i18n="news_2_desc">Cette année enregistre une production exceptionnelle d'olives avec une augmentation de 35% par rapport à l'année précédente...</p>
-                            <span class="news-date">20 Novembre 2025</span>
-                        </div>
-                    </article>
-
-                    <article class="news-card">
-                        <img src="/placeholder.svg?height=200&width=350" alt="Infrastructure">
-                        <div class="news-content">
-                            <span class="news-category" data-i18n="news_cat_3">Infrastructure</span>
-                            <h3 data-i18n="news_3_title">Projet de Routes Nouvelles</h3>
-                            <p data-i18n="news_3_desc">Un ambitieux projet d'infrastructure visant à améliorer la connectivité routière entre les villages de Ghaiba...</p>
-                            <span class="news-date">18 Novembre 2025</span>
-                        </div>
-                    </article>
-
-                    <article class="news-card">
-                        <img src="/placeholder.svg?height=200&width=350" alt="Education">
-                        <div class="news-content">
-                            <span class="news-category" data-i18n="news_cat_4">Éducation</span>
-                            <h3 data-i18n="news_4_title">Amélioration des Écoles Locales</h3>
-                            <p data-i18n="news_4_desc">Des fonds ont été alloués pour la rénovation et l'amélioration des installations scolaires dans la région...</p>
-                            <span class="news-date">15 Novembre 2025</span>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <p data-i18n="footer_text">© 2025 Ghaiba News. Tous droits réservés.</p>
-            </div>
-        </footer>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js"></script>
-</body>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
